@@ -16,7 +16,7 @@ module.exports = function getBabelOptions() {
           },
         ],
       ],
-      plugins: ['@babel/plugin-proposal-export-default-from'],
-    }
+      plugins: [],
+    },
   );
 };
