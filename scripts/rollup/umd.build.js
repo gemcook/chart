@@ -1,9 +1,10 @@
 const {rollup} = require('rollup');
+const fs = require('fs');
 const babel = require('rollup-plugin-babel');
 const closure = require('rollup-plugin-closure-compiler-js');
-const prettier = require('rollup-plugin-prettier');
 const replace = require('rollup-plugin-replace');
 const resolve = require('rollup-plugin-node-resolve');
+import inject from 'rollup-plugin-inject';
 const {
   getBabelOptions,
   resolvePath,
@@ -24,6 +25,11 @@ async function build() {
           moduleDirectory: resolvePath('node_modules'),
         },
       }),
+      inject({
+        modules: {
+          $: 'jquery',
+        },
+      }),
       babel(getBabelOptions()),
       replace({
         'process.env.NODE_ENV': isProduction ? "'production'" : "'development'",
@@ -34,12 +40,12 @@ async function build() {
 
   const {code, map} = bundle.generate({
     format: 'umd',
-    name: '@gemcook/utils',
+    name: '@gemcook/chart',
     sourceMap: true,
   });
 
-  fs.writeFileSync(resolvePath('lib/index.js'), result.code);
-  fs.writeFileSync(resolvePath('lib/index.js.map'), result.map);
+  fs.writeFileSync(resolvePath('lib/index.js'), code);
+  fs.writeFileSync(resolvePath('lib/index.js.map'), map);
 }
 
 build();
