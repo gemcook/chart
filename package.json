@@ -8,7 +8,9 @@
   "scripts": {
     "build:flow-gen": "flow gen-flow-files ./src/index.js --out-dir ./lib/",
     "build:umd": "node ./scripts/rollup/umd.build.js",
-    "prepublishOnly": "make prepublish"
+    "prepublishOnly": "make prepublish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.54",
@@ -16,7 +18,13 @@
     "@babel/preset-env": "^7.0.0-beta.54",
     "@babel/preset-flow": "^7.0.0-beta.54",
     "@babel/preset-stage-2": "^7.0.0-beta.54",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^3.4.8",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
+    "babel-runtime": "^6.26.0",
     "eslint": "^5.2.0",
     "eslint-config-fbjs": "^2.0.1",
     "eslint-config-gemcook": "^1.0.4",
@@ -39,6 +47,10 @@
   "dependencies": {
     "chart.js": "^2.7.2",
     "jquery": "^3.3.1",
-    "react-chartjs-2": "^2.7.4"
+    "ramda": "^0.25.0",
+    "react": "^16.4.1",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.4.1",
+    "recompose": "^0.27.1"
   }
 }
