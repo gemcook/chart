@@ -28,6 +28,7 @@ async function build() {
       inject({
         modules: {
           $: 'jquery',
+          R: 'ramda',
         },
       }),
       babel(getBabelOptions()),
