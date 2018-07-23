@@ -1,0 +1,9 @@
+/* @flow */
+export type Props = {
+  +datasets?: Array<{
+    data: Array<number>,
+    backgroundColor: Array<string>,
+    hoverBackgroundColor: Array<string>,
+  }>,
+  refs: Object,
+};
