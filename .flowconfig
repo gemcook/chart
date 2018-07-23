@@ -7,10 +7,9 @@
 [lints]
 
 [options]
-esproposal.class_instance_fields=true
-esproposal.class_static_fields=true
+esproposal.class_instance_fields=enable
+esproposal.class_static_fields=enable
 esproposal.decorators=ignore
-esproposal.export_star_as=true
+esproposal.export_star_as=enable
 
 [strict]
-sketchy-number
