@@ -10,35 +10,27 @@ function Radar(props: Props) {
 
   const data = R.mergeDeepLeft(
     {
-      labels: [
-        'Eating',
-        'Drinking',
-        'Sleeping',
-        'Designing',
-        'Coding',
-        'Cycling',
-        'Running',
-      ],
+      labels: ['食う', '寝る', '遊ぶ'],
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Aくん',
           backgroundColor: 'rgba(179,181,198,0.2)',
           borderColor: 'rgba(0, 0, 0, 0)',
           pointBackgroundColor: 'rgba(0, 0, 0, 0)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(179,181,198,1)',
-          data: [65, 59, 90, 81, 56, 55, 40],
+          data: [80, 40, 50],
         },
         {
-          label: 'My Second dataset',
+          label: 'Bちゃん',
           backgroundColor: 'rgba(255,99,132,0.2)',
           borderColor: 'rgba(0, 0, 0, 0)',
           pointBackgroundColor: 'rgba(0, 0, 0, 0)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(255,99,132,1)',
-          data: [28, 48, 40, 19, 96, 27, 100],
+          data: [60, 20, 80],
         },
       ],
     },
