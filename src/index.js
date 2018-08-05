@@ -1,2 +1,3 @@
 /* @flow */
-export {Doughnut} from './Doughnut';
+export * from './Doughnut';
+export * from './Pie';
