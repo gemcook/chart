@@ -45,7 +45,7 @@ jobs :
           command: |
             echo "${CIRCLE_BRANCH}"
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              aws s3 sync dist s3://chart-storybook-compose-hostbucket-1rb9xe05iy0si;
+              aws s3 sync storybook-static s3://chart-storybook-compose-hostbucket-1rb9xe05iy0si;
             else
               echo 'skip S3 deploy'
             fi
