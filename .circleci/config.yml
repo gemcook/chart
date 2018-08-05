@@ -1,0 +1,59 @@
+version: 2
+jobs :
+  build:
+    docker:
+      - image: gemcook/node:8.11.1
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: gemcook-chart-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: 各種情報表示
+          command:
+            echo node \"$(node -v)\"
+            echo yarn \"$(yarn --version)\"
+            echo python \"$(python3 --version)\"
+            echo awscli \"$(aws --version)\"
+            echo pwd \"$(pwd)\"
+            echo yarn cache dir \"$(yarn cache dir)\"
+
+      - run:
+          name: 依存関係のインストール
+          command: yarn install --frozen-lockfile --non-interactive
+
+      - run:
+          name: eslintチェック
+          command: yarn run eslint --ext .js,.jsx .
+
+      - run:
+          name: ビルドファイルを作成
+          command: |
+            echo "${CIRCLE_BRANCH}"
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              make master
+            fi
+      - save_cache:
+          key: gemcook-chart-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - /home/node/project/node_modules
+            - /home/node/.cache/yarn/
+
+      - run:
+          name: S3へデプロイ
+          command: |
+            echo "${CIRCLE_BRANCH}"
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync dist s3://chart-storybook-compose-hostbucket-1rb9xe05iy0si;
+            else
+              echo 'skip S3 deploy'
+            fi
+      - run:
+          name: CloudFrontのキャッシュを削除
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws cloudfront create-invalidation --distribution-id E10MJ2B0V7M7UP --paths '/*'
+            else
+              echo 'skip invalidate CloudFront cache'
+            fi

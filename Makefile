@@ -20,5 +20,8 @@ flow-gen:
 storybook:
 	yarn storybook
 
+master:
+	yarn run build-storybook
+
 publish:
 	yarn publish --access public
