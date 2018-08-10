@@ -17,7 +17,7 @@ prepublish:
 flow-gen:
 	yarn build:flow-gen
 
-storybook:
+start:
 	yarn storybook
 
 master:
