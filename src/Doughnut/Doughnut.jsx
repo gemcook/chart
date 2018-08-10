@@ -10,12 +10,22 @@ function Doughnut(props: Props) {
 
   const data = R.mergeDeepLeft(
     {
-      labels: ['Red', 'Green', 'Yellow'],
+      labels: ['Diamond', 'Sapphire', 'Emerald', 'Opal'],
       datasets: [
         {
-          data: [300, 50, 100],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          data: [120, 50, 100, 70],
+          backgroundColor: [
+            'rgba(250, 102, 129, 1)',
+            'rgba(250, 102, 129, 0.7)',
+            'rgba(250, 102, 129, 0.45)',
+            'rgba(250, 102, 129, 0.2)',
+          ],
+          hoverBackgroundColor: [
+            'rgba(250, 102, 129, 0.9)',
+            'rgba(250, 102, 129, 0.6)',
+            'rgba(250, 102, 129, 0.35)',
+            'rgba(250, 102, 129, 0.1)',
+          ],
         },
       ],
     },
@@ -24,6 +34,7 @@ function Doughnut(props: Props) {
 
   return (
     <div ref={el => refs.store('_Doughnut', el)}>
+      <h1>Doughnut Chart</h1>
       <_Doughnut data={data} />
     </div>
   );

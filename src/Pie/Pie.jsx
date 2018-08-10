@@ -10,12 +10,34 @@ function Pie(props: Props) {
 
   const data = R.mergeDeepLeft(
     {
-      labels: ['Red', 'Green', 'Yellow'],
+      labels: ['Green', 'Yellow', 'Orange', 'pink', 'blue'],
       datasets: [
         {
-          data: [300, 50, 100],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          data: [200, 50, 100, 80, 220],
+          backgroundColor: [
+            'rgba(82,156,138,0.8)',
+            'rgba(221,170,69,0.8)',
+            'rgba(214,109,74,0.8)',
+            'rgba(155,51,86,0.8)',
+            'rgba(80,109,187,0.8)',
+          ],
+          hoverBackgroundColor: [
+            'rgba(82,156,138,0.7)',
+            'rgba(221,170,69,0.7)',
+            'rgba(214,109,74,0.7)',
+            'rgba(155,51,86,0.7)',
+            'rgba(80,109,187,0.7)',
+          ],
+          borderWidth: [10, 1, 1, 1, 1],
+          borderColor: [
+            'rgb(150, 204, 189)',
+            'white',
+            'white',
+            'white',
+            'white',
+          ],
+          rotation: [180, 180, 180, 180, 180],
+          circumference: [180, 180, 180, 180, 180],
         },
       ],
     },
@@ -24,6 +46,7 @@ function Pie(props: Props) {
 
   return (
     <div ref={el => refs.store('_Pie', el)}>
+      <h1>Pie Chart</h1>
       <_Pie data={data} />
     </div>
   );
