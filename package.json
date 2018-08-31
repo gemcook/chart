@@ -1,8 +1,8 @@
 {
-  "name": "chart",
+  "name": "@gemcook/chart",
   "version": "1.0.0",
   "main": "lib/index.js",
-  "repository": "https://shsssskn@github.com/gemcook/chart.git",
+  "repository": "https://ssssskn@github.com/gemcook/chart.git",
   "author": "shsssskn <s.nishino@gemcook.com>",
   "license": "MIT",
   "scripts": {
@@ -54,6 +54,11 @@
     "react": "^16.4.2",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.4.2",
-    "recompose": "^0.28.2"
+    "recompose": "^0.28.2",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-prettier": "^0.4.0",
+    "rollup-plugin-url": "^1.4.0"
   }
 }

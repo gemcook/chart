@@ -12,6 +12,7 @@ module.exports = function getBabelOptions() {
           '@babel/preset-env',
           {
             targets: {browsers: ['> 1% in JP'], esmodules: false},
+            modules: false,
           },
         ],
       ],
