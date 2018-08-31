@@ -1,14 +1,10 @@
 /* @flow */
-export type InternalProps = {
+export type Props = {
   refs: Object,
-};
-
-export type ExternalProps = {
-  +datasets?: Array<{
+  labels: Array<string>,
+  datasets: Array<{
     data: Array<number>,
     backgroundColor: Array<string>,
     hoverBackgroundColor: Array<string>,
   }>,
 };
-
-export type Props = InternalProps & ExternalProps;
