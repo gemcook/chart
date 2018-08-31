@@ -4,7 +4,7 @@ const babel = require('rollup-plugin-babel');
 const closure = require('rollup-plugin-closure-compiler-js');
 const replace = require('rollup-plugin-replace');
 const resolve = require('rollup-plugin-node-resolve');
-import inject from 'rollup-plugin-inject';
+const inject = require('rollup-plugin-inject');
 const {
   getBabelOptions,
   resolvePath,
