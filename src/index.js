@@ -1,4 +1,4 @@
 /* @flow */
-export * from './Doughnut';
-export * from './Pie';
-export * from './Radar';
+export {Doughnut} from './Doughnut';
+export {Pie} from './Pie';
+export {Radar} from './Radar';
