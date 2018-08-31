@@ -5,6 +5,9 @@
   "repository": "https://ssssskn@github.com/gemcook/chart.git",
   "author": "shsssskn <s.nishino@gemcook.com>",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build:flow-gen": "flow gen-flow-files ./src/index.js --out-dir ./lib/",
     "build:umd": "node ./scripts/rollup/umd.build.js",
