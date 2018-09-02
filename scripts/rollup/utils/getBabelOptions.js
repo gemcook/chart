@@ -4,19 +4,8 @@ module.exports = function getBabelOptions() {
     {
       exclude: 'node_modules/**',
       babelrc: false,
-      runtimeHelpers: true,
-      presets: [
-        '@babel/flow',
-        '@babel/react',
-        [
-          '@babel/preset-env',
-          {
-            targets: {browsers: ['> 1% in JP'], esmodules: false},
-            modules: false,
-          },
-        ],
-      ],
-      plugins: [['@babel/plugin-proposal-class-properties', {loose: true}]],
+      presets: ['babel-preset-stage-flow'],
+      plugins: [],
     },
   );
 };
